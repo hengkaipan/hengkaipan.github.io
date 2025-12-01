@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Hengkai Pan – Research Focus</title>
+
+  <meta name="author" content="Hengkai Pan">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="images/cmu_ri.jpg" type="image/x-icon">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+
+<body>
+  <table
+    style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+    <tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <!-- Header / Nav -->
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr style="padding:0px">
+                <td style="padding:2.5%;width:100%;vertical-align:middle">
+                  <p style="text-align:center;">
+                    <a href="index.html">Home</a> &nbsp;/&nbsp;
+                    <span style="font-weight:bold;"> Research Focus</span>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Main content -->
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <tbody>
+              <tr>
+                <td style="padding:20px;width:100%;vertical-align:top">
+
+                  <h2>Why World Models?</h2>
+
+                  <p>
+                    In cognitive science, learning is often viewed as building internal models that organize experience,
+                    connect it to prior knowledge, and support reasoning about the future. World models&nbsp;
+                    <a href="https://arxiv.org/abs/1803.10122" class="cite" data-key="world-models"></a>,
+                    <a href="https://arxiv.org/abs/2506.09985" class="cite" data-key="v-jepa2"></a>
+                    bring this perspective into robotics by explicitly learning environment dynamics that can be reused
+                    across tasks, settings, and embodiments.
+                  </p>
+
+                  <p>
+                    Once trained, these models let robots imagine how actions will change the world and choose
+                    behaviors accordingly. This parallels evidence from cognitive neuroscience&nbsp;
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/30031670/" class="cite" data-key="nau2018"></a>,
+                    <a href="https://www.nature.com/articles/s41467-025-59153-y" class="cite" data-key="barnaveli2025"></a>
+                    that humans rely on internal, map-like representations of space, perception, and action outcomes to
+                    guide behavior.
+                  </p>
+
+                  <p>
+                    From this perspective, I see <b>four key challenges</b> for world models in robotics:
+                  </p>
+
+                  <ul>
+                    <li>
+                      <b>Learning task-relevant latent spaces.</b>
+                    </li>
+                    <li>
+                      <b>Enabling efficient planning toward diverse goals.</b>
+                    </li>
+                    <li>
+                      <b>Acquiring scalable, diverse data.</b>
+                    </li>
+                    <li>
+                      <b>Continual self-improvement through interaction.</b>
+                    </li>
+                  </ul>
+
+                  <h2>Research Directions</h2>
+
+                  <p>
+                    Looking ahead, I see three directions as especially important for scaling world models toward
+                    general-purpose robot intelligence.
+                  </p>
+
+                  <h3 style="margin-top:16px;">1. Steering large video models toward action-conditioned prediction</h3>
+                  <p>
+                    Large pretrained video models&nbsp;
+                    <a href="https://arxiv.org/abs/2509.20328" class="cite" data-key="video-zero-shot"></a>
+                    already encode rich temporal and causal structure from
+                    Internet-scale, action-free data. If we can steer these models toward <b>action-conditioned
+                    prediction</b>, we can transform broad visual understanding into actionable dynamics priors for
+                    robots.
+                  </p>
+                  <p>
+                    I view this as a natural interface between foundation video models&nbsp;
+                    <a href="https://arxiv.org/abs/2509.20328" class="cite" data-key="video-zero-shot"></a>
+                    and world-model based control&nbsp;
+                    <a href="https://arxiv.org/abs/2411.04983" class="cite" data-key="dino-wm"></a>,
+                    <a href="https://foresight-il.github.io/" class="cite" data-key="foresight-il"></a>,
+                    <a href="https://arxiv.org/abs/2409.12192" class="cite" data-key="dynamo"></a>,
+                    <a href="https://arxiv.org/abs/2511.07732" class="cite" data-key="vipra"></a>,
+                    where pretraining provides broad priors and robot data sharpens them
+                    into reliable dynamics models.
+                  </p>
+
+                  <h4 style="margin:10px 0 4px; font-size:1em;">1.1 Latent actions pretraining from raw videos</h4>
+                  <p>
+                    A complementary path is to <b>extract latent actions directly from raw videos</b>, learning
+                    motion-centric representations that capture how scenes evolve over time and can later be
+                    grounded to robot commands. In my previous works&nbsp;
+                    <a href="https://arxiv.org/abs/2409.12192" class="cite" data-key="dynamo"></a>,
+                    <a href="https://arxiv.org/abs/2511.07732" class="cite" data-key="vipra"></a>, we study how such latent
+                    action spaces, learned from large collections of robot and human videos, can serve as a bridge
+                    between video prediction and actionable control, making it easier to transfer knowledge across
+                    datasets and embodiments.
+                  </p>
+
+                  <h3 style="margin-top:16px;">2. Unifying diverse sensory modalities</h3>
+                  <p>
+                    Real-world manipulation is fundamentally multimodal: robots must integrate RGB, depth, force,
+                    tactile, and sometimes audio to act robustly. Achieving strong generalization will require
+                    <b>unifying diverse sensory modalities into a shared latent space</b> where the world model can
+                    reason jointly about contact, geometry, and semantics. We are working on this! Stay tuned.
+                  </p>
+
+                  <h3 style="margin-top:16px;">3. Self-improving agents: explore, imagine, distill</h3>
+                  <p>
+                    Finally, I am interested in <b>developing self-improving agents</b> by letting world models and
+                    policies refine one another in a continual loop. An exploration policy&nbsp;
+                    <a href="https://proceedings.mlr.press/v70/pathak17a/pathak17a.pdf" class="cite" data-key="pathak2017"></a>
+                    can gather
+                    diverse, imperfect experience that a world model can learn from. The world model can then perform
+                    slower but accurate planning to generate high-quality imagined trajectories, which in turn can be
+                    distilled into a fast, reactive policy.
+                  </p>
+
+                  <p>
+                    This suggests an iterative cycle:
+                    <b>explore → imagine → distill</b>.
+                    The exploration policy broadens coverage of the environment; the world model consolidates
+                    structure from this experience; and the distilled policy turns deliberate planning (System 2)
+                    into intuitive, reactive behavior (System 1). This view resonates with hippocampal–cortical
+                    consolidation and cognitive map theories&nbsp;
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/30031670/" class="cite" data-key="nau2018"></a>,
+                    <a href="https://www.nature.com/articles/s41467-025-59153-y" class="cite" data-key="barnaveli2025"></a>,
+                    as well as proposals for
+                    autonomous machine intelligence based on world models and actors&nbsp;
+                    <a href="https://openreview.net/forum?id=BZ5a1r-kVsf" class="cite" data-key="lecun2022"></a>.
+                  </p>
+
+                  <!-- Figure placeholder for self-improving loop -->
+                  <div style="text-align:center; margin: 24px 0;">
+                    <img src="images/self-improving.jpg"
+                         alt="Self-improving world model loop: explore, imagine, distill"
+                         style="max-width:100%; border-radius:8px;">
+                    <p style="font-size:0.9em; color:#555; margin-top:8px;">
+                      Self-improving world model cycle: explore, imagine, distill.
+                    </p>
+                  </div>
+
+                  <p>
+                    My long-term goal is to develop world models that can support this kind of continual self-improvement,
+                    scaling from single-task setups to broad, open-ended robot skills — while remaining grounded in
+                    physically realistic dynamics and efficient enough to deploy on real hardware.
+                  </p>
+
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Auto-number citations -->
+  <script>
+    (function() {
+      const cites = document.querySelectorAll('a.cite');
+      const seen = {};
+      let counter = 1;
+
+      cites.forEach(a => {
+        const key = a.dataset.key || a.href;
+        if (seen[key] == null) {
+          seen[key] = counter++;
+        }
+        a.textContent = '[' + seen[key] + ']';
+      });
+    })();
+  </script>
+</body>
+
+</html>
